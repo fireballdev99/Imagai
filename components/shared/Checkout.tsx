@@ -8,6 +8,7 @@ import { checkoutCredits } from "@/lib/actions/transaction.action";
 
 import { Button } from "../ui/button";
 
+// TODO : fix check out and add credit
 const Checkout = ({
   plan,
   amount,
