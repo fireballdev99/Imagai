@@ -8,17 +8,17 @@ export interface IImage extends Document {
   width?: number;
   height?: number;
   config?: object;
-  transformationUrl?: string;
+  TransformationUrl?: string;
   aspectRatio?: string;
   color?: string;
   prompt?: string;
-  author: {
+  author?: {
     _id: string;
     firstName: string;
     lastName: string;
   };
-  createdAt?: Date;
-  updatedAt?: Date;
+  createAt: Date;
+  updateAt: Date;
 }
 
 const ImageSchema = new Schema({
@@ -29,13 +29,13 @@ const ImageSchema = new Schema({
   width: { type: Number },
   height: { type: Number },
   config: { type: Object },
-  transformationUrl: { type: String },
+  TransformationUrl: { type: String },
   aspectRatio: { type: String },
   color: { type: String },
   prompt: { type: String },
   author: { type: Schema.Types.ObjectId, ref: "User" },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
+  createAt: { type: Date, default: Date.now() },
+  updateAt: { type: Date, default: Date.now() },
 });
 
 const Image = models?.Image || model("Image", ImageSchema);

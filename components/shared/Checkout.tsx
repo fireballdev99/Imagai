@@ -4,11 +4,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
 
 import { useToast } from "@/components/ui/use-toast";
-import { checkoutCredits } from "@/lib/actions/transaction.action";
 
 import { Button } from "../ui/button";
+import { checkoutCredits } from "@/lib/actions/transaction.actions";
 
-// TODO : fix check out and add credit
 const Checkout = ({
   plan,
   amount,
